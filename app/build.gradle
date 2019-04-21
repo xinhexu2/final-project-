@@ -43,7 +43,3 @@ dependencies {
     implementation 'org.apache.httpcomponents:httpasyncclient:4.0.2'
     implementation 'org.apache.httpcomponents:httpmime:4.3.6'
 }
-
-
-
-
