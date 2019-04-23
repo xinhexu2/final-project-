@@ -1,6 +1,7 @@
 package com.example.finalproject;
 
 import android.content.Intent;
+import android.os.Debug;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import unirest.HttpResponse;
@@ -48,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
         // Add the request to the RequestQueue.
         queue.add(stringRequest);
 
@@ -57,30 +58,6 @@ public class MainActivity extends AppCompatActivity {
 //        Double inputAmount = Double.valueOf(dollar.getText().toString());
 //        Double JPYoutput = inputAmount * response;
 //        Toast.makeText(getApplicationContext(), JPYoutput.toString(), Toast.LENGTH_LONG).show();
-    }
-    /**
-     * @param json -input
-     * @return -JPYoutput;
-     */
-    public static double getJPY(final java.lang.String json) {
-        JsonParser parser = new JsonParser();
-        JsonObject result = parser.parse(json).getAsJsonObject();
-        JsonObject rates = result.get("rates").getAsJsonObject();
-        JsonElement jpy = rates.get("JPY");
-        Double jpyrate = jpy.getAsDouble();
-        return jpyrate;
-    }
-    /**
-     * @param json -input
-     * @return -USDoutput;
-     */
-    public static double getUSD(final java.lang.String json) {
-        JsonParser parser = new JsonParser();
-        JsonObject result = parser.parse(json).getAsJsonObject();
-        JsonObject rates = result.get("rates").getAsJsonObject();
-        JsonElement usd = rates.get("USD");
-        double usdrate = usd.getAsDouble();
-        return usdrate;
     }
 
 }
