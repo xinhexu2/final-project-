@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        findViewById(R.id.button).setOnClickListener(v -> finishProcessView());
         // Add the request to the RequestQueue.
         queue.add(stringRequest);
     }
@@ -110,14 +111,11 @@ public class MainActivity extends AppCompatActivity {
         double krwrate = krw.getAsDouble();
         return krwrate;
     }
-    void finishProcessView(final String value) {
+    public void finishProcessView() {
         EditText dollar = (EditText) findViewById(R.id.input);
         Double inputAmount = Double.valueOf(dollar.getText().toString());
-        Double jpyOutput = inputAmount * getUSD(value) / getJPY(value);
+        Double jpyOutput = inputAmount * getJPY(value) / getUSD(value);
         String jpyString = String.valueOf(jpyOutput);
-        //Toast JPYToast = Toast.makeText(getApplicationContext(), jpyString, Toast.LENGTH_LONG);
-        //JPYToast.show();
-        //JPYToast.setGravity(0,0,0);
         TextView jpyView = (TextView) findViewById(R.id.JPYoutput);
         jpyView.setText(jpyString);
     }
