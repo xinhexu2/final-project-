@@ -118,6 +118,17 @@ public class MainActivity extends AppCompatActivity {
         String jpyString = String.valueOf(jpyOutput);
         TextView jpyView = (TextView) findViewById(R.id.JPYoutput);
         jpyView.setText(jpyString);
+        Double gbpOutput = inputAmount * getGBP(value) / getUSD(value);
+        String gbpString = String.valueOf(gbpOutput);
+        TextView gbpView = (TextView) findViewById(R.id.gbpoutput);
+        gbpView.setText(gbpString);
+        Double cnyOutput = inputAmount * getCNY(value) / getUSD(value);
+        String cnyString = String.valueOf(cnyOutput);
+        TextView cnyView = (TextView) findViewById(R.id.cnyoutput);
+        cnyView.setText(cnyString);
+        Double krwOutput = inputAmount * getKRW(value) / getUSD(value);
+        String krwString = String.valueOf(krwOutput);
+        TextView krwView = (TextView) findViewById(R.id.krwoutput);
+        krwView.setText(krwString);
     }
-
 }
