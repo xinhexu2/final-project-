@@ -115,12 +115,11 @@ public class MainActivity extends AppCompatActivity {
         Double inputAmount = Double.valueOf(dollar.getText().toString());
         Double jpyOutput = inputAmount * getUSD(value) / getJPY(value);
         String jpyString = String.valueOf(jpyOutput);
+        //Toast JPYToast = Toast.makeText(getApplicationContext(), jpyString, Toast.LENGTH_LONG);
+        //JPYToast.show();
+        //JPYToast.setGravity(0,0,0);
         TextView jpyView = (TextView) findViewById(R.id.JPYoutput);
         jpyView.setText(jpyString);
     }
-    //Toast JPYToast = Toast.makeText(getApplicationContext(), jpyString, Toast.LENGTH_LONG);
-    //JPYToast.show();
-    //JPYToast.setGravity(0,0,0);
-
 
 }
