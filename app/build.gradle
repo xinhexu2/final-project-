@@ -42,4 +42,5 @@ dependencies {
     implementation 'org.json:json:20140107'
     implementation 'org.apache.httpcomponents:httpasyncclient:4.0.2'
     implementation 'org.apache.httpcomponents:httpmime:4.3.6'
+    implementation 'com.google.code.gson:gson:2.8.2'
 }
