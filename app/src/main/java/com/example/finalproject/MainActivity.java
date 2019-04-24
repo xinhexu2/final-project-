@@ -111,6 +111,14 @@ public class MainActivity extends AppCompatActivity {
         double krwrate = krw.getAsDouble();
         return krwrate;
     }
+    public static double getHKD(final java.lang.String json) {
+        JsonParser parser = new JsonParser();
+        JsonObject result = parser.parse(json).getAsJsonObject();
+        JsonObject rates = result.get("rates").getAsJsonObject();
+        JsonElement hkd = rates.get("HKD");
+        double hkdrate = hkd.getAsDouble();
+        return hkdrate;
+    }
     public void finishProcessView() {
         EditText dollar = (EditText) findViewById(R.id.input);
         Double inputAmount = Double.valueOf(dollar.getText().toString());
@@ -130,5 +138,9 @@ public class MainActivity extends AppCompatActivity {
         String krwString = String.valueOf(krwOutput);
         TextView krwView = (TextView) findViewById(R.id.krwoutput);
         krwView.setText(krwString);
+        Double hkdOutput = inputAmount * getHKD(value) / getUSD(value);
+        String hkdString = String.valueOf(hkdOutput);
+        TextView hkdView = (TextView) findViewById(R.id.hkdoutput);
+        hkdView.setText(hkdString);
     }
 }
